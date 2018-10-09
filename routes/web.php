@@ -11,8 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
-Route::get('register/hello', 'Auth\RegisterController@hello');
+Route::redirect('/','register/hello');
+
+//Route::get('register/hello', 'Auth\RegisterController@hello');
+
+Route::group(['prefix' => 'register','namespace' => 'Auth'],function (){
+    Route::post('hello', 'RegisterController@hello');
+    Route::post('test', 'RegisterController@test');
+});

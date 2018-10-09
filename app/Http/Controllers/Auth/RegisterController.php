@@ -75,4 +75,10 @@ class RegisterController extends Controller
         echo 'hello';
         exit;
     }
+
+    public function test()
+    {
+        echo 'test';
+        exit;
+    }
 }
