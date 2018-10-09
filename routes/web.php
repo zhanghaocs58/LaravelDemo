@@ -20,6 +20,9 @@ Route::redirect('/','register/hello');
 //Route::get('register/hello', 'Auth\RegisterController@hello');
 
 Route::group(['namespace' => 'Auth','prefix' => 'auth'],function (){
-    Route::post('register/hello', 'RegisterController@hello');
-    Route::post('register/test', 'RegisterController@test');
+    Route::group(['prefix' => 'register'],function (){
+        Route::post('hello', 'RegisterController@hello');
+        Route::post('test', 'RegisterController@test');
+    });
+
 });
