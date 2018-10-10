@@ -15,7 +15,7 @@
 //    return view('welcome');
 //});
 
-Route::redirect('/','Auth/register/hello');
+Route::redirect('/','auth/register/hello');
 
 //Route::get('register/hello', 'Auth\RegisterController@hello');
 
