@@ -15,11 +15,12 @@
 //    return view('welcome');
 //});
 
-Route::redirect('/','register/hello');
+Route::redirect('/','Auth/register/hello');
 
 //Route::get('register/hello', 'Auth\RegisterController@hello');
 
 Route::group(['namespace' => 'Auth','prefix' => 'auth'],function (){
+    //register控制器
     Route::group(['prefix' => 'register'],function (){
         Route::get('hello', 'RegisterController@hello');
         Route::get('test', 'RegisterController@test');
